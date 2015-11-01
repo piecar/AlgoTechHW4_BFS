@@ -59,8 +59,8 @@ public class AlgoTechHW4BFS {
         }
         
         System.out.print("STDIN: ");
-        //Scanner scan = new Scanner(System.in);   
-        Scanner scan = new Scanner(new File("SampleInput.txt"));
+        Scanner scan = new Scanner(System.in);   
+        //Scanner scan = new Scanner(new File("SampleInput.txt"));
         int numGraphs = scan.nextInt();
         for(int i=1; i <= numGraphs; i++)
         {
@@ -104,7 +104,7 @@ public class AlgoTechHW4BFS {
                     {
                         nodes[neighbor].setColor("G");
                         nodes[neighbor].setParent(curr);
-                        nodes[neighbor].setDist(nodes[curr].getDist() + 1);
+                        nodes[neighbor].setDist(nodes[curr].getDist() + 6);
                         queue.add(neighbor);
                     }
                 }
@@ -119,12 +119,19 @@ public class AlgoTechHW4BFS {
             }
             
             //Output
-            System.out.println("OUT: Graph " + i + "\n");
+//            System.out.println("OUT: Graph " + i + "\n");
+//            for(int j=1; j < nodes.length; j++){
+//                System.out.println( "For vertex " + j + " the distance is " +
+//                        nodes[j].getDist());
+//            }
+//            System.out.println( " ");
             for(int j=1; j < nodes.length; j++){
-                System.out.println( "For vertex " + j + " the distance is " +
-                        nodes[j].getDist());
+                if(start != j){
+                System.out.print( nodes[j].getDist() + " ");
+                }
             }
-                System.out.println( " ");
+            System.out.println( " ");
+                
             
         }
     }
