@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author piecar
  */
-public class AlgoTechHW4BFS {
+public class Solution {
 
     /**
      * @param args the command line arguments
